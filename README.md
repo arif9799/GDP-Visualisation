@@ -14,3 +14,4 @@ and scales (used by ggplot2 for internal scaling and more extended features of d
 
 The indicators pulled for GDP from WDI are NY.GDP.PCAP.CD, NY.GDP.MKTP.CD which is GDP per capita and Annual GDP respectively.
 The plots are for GDP per Capita and Annual GDP (Single Graph with multiple geom smooth lines and faceted region wise or country wise) 
+![MP-Slide1](https://user-images.githubusercontent.com/93501171/143091122-2aa820aa-a962-4eff-b04f-a668241d83d9.jpg)
