@@ -1,5 +1,5 @@
 ---
-title: "Mini Poster"
+title: "GDP Visualisation"
 author: "Arif Waghbakriwala"
 date: "10/5/2021"
 output: powerpoint_presentation
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 GDP per capita (Single graph)
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(ggplot2)
 library(WDI)
 library(scales)
@@ -27,18 +27,22 @@ df<-WDI(
   language = "en"
 )
 
+
+
 names(df) <- c('code', 'country', 'year', 'GDP_Per_Cap','GDP_Annual')
 plt <- ggplot(df, aes(x=year,GDP_Per_Cap,color=country))+
-    geom_smooth(stat='identity',size=0.2,bins = 1)+
+    geom_smooth(stat='identity',size=0.5,bins = 1)+
   scale_y_continuous(labe = dollar)+
   scale_x_continuous(breaks = round(seq(min(df$year), max(df$year), by = 2),1)) +
+  scale_fill_brewer(palette="Dark2") +
+  theme_minimal()+
   theme(axis.text.x= element_text(angle = 90, vjust = 0.5, hjust=1))+
   ggtitle("GDP Per Capita (1960-2020)")
 plt
 
 ```
 GDP per capita (Faceted)
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(ggplot2)
 library(WDI)
 library(scales)
@@ -56,8 +60,10 @@ df<-WDI(
 
 names(df) <- c('code', 'country', 'year', 'GDP_Per_Cap','GDP_Annual')
 plt <- ggplot(df, aes(x=year,GDP_Per_Cap,color=country))+
-    geom_smooth(stat='identity',size=0.2,bins = 1)+
+    geom_smooth(stat='identity',size=0.5,bins = 1)+
   scale_y_continuous(labe = dollar)+
+  scale_fill_brewer(palette="Dark2") +
+  theme_minimal()+
   theme(axis.text.x= element_text(angle = 90, vjust = 0.5, hjust=1))+
   facet_wrap(~country)+
   ggtitle("GDP Per Capita - Faceted (1960-2020)")
@@ -65,7 +71,7 @@ plt
 
 ```
 GDP Annual (Single Graph)
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(ggplot2)
 library(WDI)
 library(scales)
@@ -84,16 +90,18 @@ df<-WDI(
 names(df) <- c('code', 'country', 'year', 'GDP_Per_Cap','GDP_Annual')
 
 plt1 <- ggplot(df, aes(x=year,GDP_Annual,color=country))+
-    geom_smooth(stat='identity',size=0.2)+
+    geom_smooth(stat='identity',size=0.5)+
   scale_y_continuous(labe = dollar)+
   scale_x_continuous(breaks = round(seq(min(df$year), max(df$year), by = 2),1)) +
+  scale_fill_brewer(palette="Dark2") +
+  theme_minimal()+
   theme(axis.text.x= element_text(angle = 90, vjust = 0.5, hjust=1))+
   ggtitle("Annual GDP (1960-2020)")
 plt1
 ```
 
 GDP Annual (Faceted)
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(ggplot2)
 library(WDI)
 library(scales)
@@ -112,9 +120,10 @@ df<-WDI(
 names(df) <- c('code', 'country', 'year', 'GDP_Per_Cap','GDP_Annual')
 
 plt1 <- ggplot(df, aes(x=year,GDP_Annual,color=country))+
-    geom_smooth(stat='identity',size=0.2)+
+    geom_smooth(stat='identity',size=0.5)+
   scale_y_continuous(labe = dollar)+
-  #scale_x_continuous(breaks = round(seq(min(df$year), max(df$year), by = 2),1)) +
+  theme_minimal()+
+  scale_fill_brewer(palette="Dark2") +
   theme(axis.text.x= element_text(angle = 90, vjust = 0.5, hjust=1))+
   facet_wrap(~country)
 plt1
