@@ -1,4 +1,23 @@
-# GDP-Visualisation
+<p align="center">
+  
+  ___
+</p>
+<h3 align="center">
+  
+  [GDP Visualisation, _Data Science and EDA_](https://github.com/arif9799/GDP-Visualisation)
+</h3>
+<br>
+
+<p align="center">
+  <img src="https://github.com/arif9799/arif9799/blob/main/gifs/GDPVisualisation.gif" width="250" alt="Description">
+</p>
+<br>
+
+_Graphonomics: Crafting a Visual representation of Economic Growth_ 
+
+Started with extraction of demographic economic data from ‘World Development Indicator’ Datasets in WDI Package in ‘R’ language and then Analyzed data by plotting time series graphs of the GDP of certain countries for last 6 decades and constructing a Mini-Poster to Contrast. Finally, Inferencing various peaks of GDP & correlations of the variables & made presumptions of “The Great Recession”.
+<br>
+
 Visualizing GDP trends (with peaks) for various countries for the last 6 decades.    
 
 Loaded the WDI Package to pull GDP data of the last 60 years for certain specific countries using the WDI Function.
